@@ -1,0 +1,366 @@
+/*Между блоками 3 отступа, между элементами 1*/
+
+/*GENERAL - стили, влияющие на содержимое нескольких блоков*/
+:root {
+  --light: #fff;
+  --blue: #81B3D2;
+  --brown: #766357;
+  --title: #000000;
+  --text: #333333;
+
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.title {
+  color: var(--title);
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.title--light {
+  color: var(--light);
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text--bold {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text--light {
+  color: var(--light);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.button {
+  background: var(--brown);
+  border: none;
+
+  color: var(--light);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+
+
+/*INDIVIDUAL - стили влияющие на содержимое одного блока*/
+
+html, .body {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background: #F2F2F2;
+  min-width: 1280px;
+
+  position: relative;
+}
+
+/*Preloader*/
+.preloader {
+  background: #F2F2F2;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 100;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  border: 10px solid #81B3D2;
+  border-radius: 50%;
+  border-top-color: rgb(187, 212, 228);
+
+  width: 75px;
+  height: 75px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 2s spin infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/*Header*/
+.header {
+  background: var(--light);
+  /* box-shadow: 0px -20px 50px 3px #DBDBDB; */
+
+  width: 1200px;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.header__logo {
+  background: url(../img/header__logo.png) no-repeat;
+
+  width: 138px;
+  height: 70px;
+
+  position: absolute;
+  top: 0;
+  left: 535px;
+}
+
+.header-nav__list {
+  margin: 0;
+  padding: 0;
+  padding: 20px 73px;
+}
+
+.header-nav__text:first-child {
+  margin-right: 127px;
+}
+
+.header-nav__text:nth-child(2) {
+  margin-right: 380px;
+}
+
+.header-nav__text:nth-child(3) {
+  margin-right: 140px;
+}
+
+/*Footer*/
+.footer {
+  background: var(--light);
+  /* box-shadow: 0px 0px 50px 3px #DBDBDB; */
+
+  width: 1200px;
+  margin: 0 auto;
+  padding: 36px 0px;
+  padding-left: 132px;
+  padding-right: 102px;
+
+  display: flex;
+
+  box-sizing: border-box;
+}
+
+.footer__tag {
+  margin-right: 260px;
+  padding-top: 15px;
+}
+
+.footer__social-list {
+  width: 150px;
+  margin: 0px;
+  margin-right: 220px;
+  padding: 0px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__social-item {
+  background: var(--blue);
+  width: 46px;
+  height: 48px;
+}
+
+.footer__social-link {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__by {
+  display: flex;
+}
+
+.footer__by-text {
+  margin-right: 9px;
+}
+
+
+
+/*ACTIVE - стили активности*/
+
+.link:hover {
+  color: var(--blue);
+  transition: 0.1s linear;
+}
+
+.link:active {
+  color: #CACACA;
+  transition: 0.1s linear;
+}
+
+.footer__social-item:hover {
+  background: #669EC0;
+  transition: 0.1s linear;
+}
+
+.footer__social-item:active {
+  background: #5496BD;
+  transition: 0.1s linear;
+}
+
+.footer__social-link:active {
+  opacity: 0.3;
+}
+
+.footer__logo:hover {
+  fill: var(--blue);
+  transition: 0.1s linear;
+}
+
+.footer__logo:active {
+  fill: #CACACA;
+  transition: 0.1s linear;
+}
+
+.button:hover {
+  background: #604E43;
+  transition: 0.1s linear;
+}
+
+.button:active {
+  background: #503E33;
+  color: #918984;
+  transition: 0.1s linear;
+}
+
+.button--blue:hover {
+  background: #669EC0;
+  transition: 0.1s linear;
+}
+
+.button--blue:active {
+  color: #94B9D2;
+  background: #5496BD;
+  transition: 0.1s linear;
+}
+
+.price-button:hover {
+  background: var(--light);
+  transition: 0.1s linear;
+
+  color: var(--black)
+}
+
+.price-button:active {
+  background: var(--light);
+  transition: 0.1s linear;
+
+  color: var(--black);
+
+  transform: scale(0.95);
+}
+
+.sorting-item:hover {
+  color: var(--blue);
+
+  transition: 0.1s linear;
+}
+
+.sorting-item:active {
+  border: none;
+  color: var(--black);
+
+  transition: 0.1s linear;
+}
+
+.sorting-up:hover, .sorting-down:hover {
+  fill: var(--blue);
+
+  transition: 0.1s linear;
+}
+
+.sorting-up:active, .sorting-down:active {
+  fill: var(--black);
+
+  transition: 0.1s linear;
+}
